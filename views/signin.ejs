@@ -1,0 +1,23 @@
+<%- include partials/header.ejs %>
+<form id="cal" action="/signin" method="POST">
+ 	<header style="justify-content: flex-start;">
+		<img style="margin-left: -15px;" src="./assets/img/100x.png" height="90">
+		<p style="margin-left:8px; font-size:16px; line-height: 25px">Омский<br> Государственный<br> Технический Университет</p>
+	</header>
+	<h2>Войти</h2>
+  	<div class="group">
+		<label>Имя пользователя:</label>
+		<input type="text" name="username"/>
+	</div>
+	<div class="group">
+		<label>Пароль:</label>
+		<input type="password" name="password"/>
+	</div>
+	<div class="group">
+		<button class="btn" type="submit">Продолжить</button>
+	</div>
+	<footer>
+		<%= error %>
+	</footer>
+</form>
+<%- include partials/footer.ejs %>

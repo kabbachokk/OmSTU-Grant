@@ -1,0 +1,15 @@
+<%- include ../partials/header.ejs %>
+
+<form id="cal" method="POST" action="/research/add">
+ 	<header class="row">
+		<img class="logo" src="/assets/img/100x.png" height="95">
+        <p style="margin-left:12px; font-size:16px; line-height: 25px">Омский<br> Государственный<br> Технический Университет</p>
+    </header>
+    <h2>Импорт/Экспорт из CSV</h2>
+    
+    <footer class="row">
+        <%= message %>
+    </footer>
+</form>
+
+<%- include ../partials/footer.ejs %>

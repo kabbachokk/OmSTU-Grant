@@ -1,0 +1,39 @@
+<%- include partials/header.ejs %>
+
+<div id="cal">
+ 	<header class="row">
+		<img class="logo" src="./assets/img/100x.png" height="90"/>
+		<p style="margin-left:8px; font-size:16px; line-height: 25px">Омский<br> Государственный<br> Технический Университет</p>
+	</header>
+  <h2>Навигация</h2>
+  <nav>
+	<% if(loggedIn){ %>
+		<a href="/logout">Выйти</a>
+	<% } else { %>  
+		<a href="/signin">Войти</a>
+	<% } %>
+    
+    <div class="dropdown">
+		Научные работы
+      	<div class="dropdown_sub">
+			<a href="/research">Список работ</a>
+			<% if(loggedIn){ %>
+			<a style="border-top: 1px solid #eee;" href="/research/csv">Импорт/Экпорт CSV</a href="">
+			<% } %>
+      	</div>
+    </div>
+    <div class="dropdown">
+      	Мероприятия
+      	<div class="dropdown_sub">
+			<a href="/events">Календарь мероприятий</a>
+			<% if(loggedIn){ %>
+			<a style="border-top: 1px solid #eee;" href="/events/csv">Импорт/Экпорт CSV</a>
+			<% } %>
+      	</div>
+    </div>
+  </nav>
+  <div class="row">
+        <p>Основная навигация по разделам приложения.</p>
+  </div>
+</div>
+<%- include partials/footer.ejs %>

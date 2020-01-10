@@ -1,0 +1,128 @@
+*{padding:0;margin:0;-webkit-box-sizing:border-box;box-sizing:border-box;-moz-box-sizing:border-box}body{font-family:'Roboto',sans-serif;background-color:#fff;color:#777;font-size:16px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;height:100vh}a:link,a:active,a:visited{color:#777;text-decoration:none}header{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-bottom:20px;-webkit-box-pack:start!important;-ms-flex-pack:start!important;justify-content:flex-start!important}header img{margin-left:-5px;padding-right:-5px}footer{-webkit-box-pack:start!important;-ms-flex-pack:start!important;justify-content:flex-start!important;margin-top:12px}#cal{background-color:#fff;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-shadow:0 10px 10px -15px rgba(0,0,0,.21);box-shadow:0 10px 10px -15px rgba(0,0,0,.21);border:1px solid #eee;border-radius:5px;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding:30px 35px}.row{width:620px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.group{width:295px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;text-align:left}.group input{widows:100%;height:40px;border-radius:3px;border:1px solid #ddd;margin-top:10px;margin-bottom:14px;padding:0 10px;font-family:'Roboto',sans-serif;font-size:16px}.groupbtn{width:295px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;text-align:left}button.btn{background:#28508c;width:100%;height:51px;color:#fff;border:none;border-radius:3px;font-size:16px;font-weight:400;font-family:'Roboto',sans-serif;cursor:pointer;margin-bottom:6px;margin-top:18px}.groupbtn button:first-child{border-radius:3px 0 0 3px;border-right:1px solid #2b579a}.groupbtn button:last-child{border-left:1px solid #ddd;border-radius:0 3px 3px 0}button.danger{background-color:#dc3545}.select{position:relative;float:left;width:295px;height:40px;margin-top:10px;margin-bottom:14px;-webkit-box-sizing:border-box;box-sizing:border-box;font-size:inherit;overflow:hidden;-o-text-overflow:ellipsis;text-overflow:ellipsis;white-space:nowrap;border-radius:3px;border:1px solid #ddd}select::-ms-expand{display:none}.select:after{content:'<>';font:17px "Consolas",monospace;color:#333;-webkit-transform:rotate(90deg);-ms-transform:rotate(90deg);transform:rotate(90deg);right:8px;top:8px;padding:0 0 2px;border-bottom:1px solid #ccc;position:absolute;pointer-events:none}.select select{-webkit-appearance:none;-moz-appearance:none;appearance:none;display:block;width:293px;height:38px;float:right;margin:0;padding-left:12px;font-size:16px;color:#222;background-color:#fff;background-image:none;border:none;-ms-word-break:normal;word-break:normal;font-family:'Roboto',sans-serif;outline:none}h2{font-size:24px;margin-bottom:24px;text-align:left;font-family:'Roboto',sans-serif;margin-right:auto}
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: -6px;
+    margin-bottom: 14px;
+    width: 100%;
+}
+nav>a, nav>div{
+    padding: 12px 20px;
+    background-color: #fff;
+    text-decoration: none;
+    border:1px solid #eee;
+    position: relative;
+    color: #333 !important;
+}
+
+nav>a:first-child, nav>div:first-child {
+    border-radius: 3px 0 0 3px;
+    border-right: none;
+}
+nav>a:last-child, nav>div:last-child {
+    border-left: none;
+    border-radius: 0 3px 3px 0;
+}
+nav div.dropdown div.dropdown_sub{
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    width:auto;
+    left: -1px;
+    top: 100%;
+}
+nav div.dropdown.show div.dropdown_sub {
+    display: flex;
+}
+nav div.dropdown{
+    padding-right: 32px;
+    cursor: pointer;
+}
+div.dropdown_sub a{
+    color: #333;
+    padding: 10px 20px;
+    background-color: #fff;
+    text-decoration: none;
+    border:1px solid #eee;
+    text-decoration: none;
+    white-space: nowrap;
+}
+div.dropdown_sub a:first-child{
+    border-radius: 0 3px 0 0;
+    border-bottom: none;
+    border-top: 1px solid #eee;
+}
+div.dropdown_sub a:last-child{
+    border-top: none;
+    border-radius: 0 0 3px 3px;
+    border-bottom: 1px solid #eee;
+}
+div.dropdown_sub a:only-child{
+    border:1px solid #eee;
+    border-radius: 0 3px 3px 3px;
+}
+
+nav>div:after{
+    content: "\1F893";
+    position: absolute;
+    right: 14px;
+    font-size: 20px;
+    margin-top: 2px;
+}
+
+.rwd-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 3px;
+}
+.rwd-table tr[data-href]{
+    cursor: pointer !important;
+}
+.rwd-table td {
+    color: #333;
+}
+.rwd-table tr:nth-child(even) {background-color: #f9f9f9;}
+.rwd-table th, .rwd-table td {
+    display: table-cell;
+    padding: 15px !important;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+.rwd-table th:first-child, .rwd-table td:first-child {
+    padding-left: 0;
+}
+.rwd-table th:last-child, .rwd-table td:last-child {
+    padding-right: 0;
+}
+div.scrollable {
+    max-height: 500px;
+    width: 620px;
+    overflow: auto;
+    margin-bottom: 6px;
+}
+.logo {
+    margin-left: -10px;
+    cursor: pointer;
+}
+.btn {
+    padding: 8px 13px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    color: #333;
+    background: #fff;
+}
+.group .input-textarea{
+    width:100%;
+    height:124px;
+    border-radius:3px;
+    border:1px solid #ddd;
+    margin-top:10px;
+    margin-bottom:14px;
+    padding: 10px 10px;
+    font-family:
+    'Roboto',sans-serif;
+    font-size:16px;
+    resize: none;
+}
+

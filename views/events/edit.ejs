@@ -1,0 +1,67 @@
+<%- include ../partials/header.ejs %>
+
+<form id="cal" method="POST">
+ 	<header class="row">
+		<img src="/assets/img/100x.png" height="95">
+        <p style="margin-left:12px; font-size:16px; line-height: 25px">Омский<br> Государственный<br> Технический Университет</p>
+    </header>
+    <h2>Редактировать</h2>
+    <div class="row">
+        <div class="col">
+            <div class="group">
+                <label>Название мероприятия:</label>
+                <input type="text" name="title" value="<%= event.title %>"/>
+            </div>
+            <div class="group">
+                <label>Ссылка:</label>
+                <input type="text" name="link" value="<%= event.link %>"/>
+            </div>
+            <div class="group">
+                <label>Основание:</label>
+                <input type="text" name="footing" value="<%= event.footing %>"/>
+            </div>
+            <div class="group">
+                <label>Место проведения:</label>
+                <input type="text" name="place" value="<%= event.place %>"/>
+            </div>
+        </div>
+        <div class="col">
+            <div class="group">
+                <label>Статус:</label>
+                <div class="select">
+                    <label>
+                        <select name="status">
+                            <% status.forEach(function(s){ %>
+                                <% if(event.statusid === s.id){ %>
+                                    <option selected value="<%= s.id %>"><%= s.name %></option>
+                                <% } else { %>  
+                                    <option value="<%= s.id %>"><%= s.name %></option>
+                                <% } %>
+                                
+                            <% }); %>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div class="group">
+                <label>Ответственный за проведение:</label>
+                <input type="text" name="responsible" value="<%= event.responsible%>"/>
+            </div>
+            <div class="group">
+                <label>Количество участников:</label>
+                <input type="number" name="participants" value="<%= event.participants %>"/>
+            </div>
+            <div class="groupbtn">
+                <button type="submit" class="btn" formaction="/events/edit">Сохранить</button>
+                <button type="submit" class="btn danger" formaction="/events/delete">Удалить</button>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" name="id" value="<%= event.id %>" />
+    <input type="hidden" name="date" value="<%= event.date %>" />
+    <footer class="row">
+        <%= message %>
+    </footer>
+</form>
+
+<%- include ../partials/footer.ejs %>

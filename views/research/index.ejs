@@ -1,0 +1,47 @@
+<%- include ../partials/header.ejs %>
+
+<div id="cal">
+ 	<header class="row">
+		<img class="logo" src="./assets/img/100x.png" height="90"/>
+		<p style="margin-left:8px; font-size:16px; line-height: 25px">Омский<br> Государственный<br> Технический Университет</p>
+		<a href="/research/add" class="btn" style="margin-left: auto;">+</a>
+	</header>
+  	<h2 style="position: relative; width: 100%">
+		Список работ
+		<form style="position:absolute; right:0; top: -16px;" action="/research" method="GET">
+			<div class="select" style=" width: 180px;">
+				<label>
+					<select onchange="submit()" name="acadyear" style="width: 178px;">
+						<option <% if (!acadyear){ %> selected <% } %> value="">За все время</option>
+						<% acadyears.forEach(function(s){ %>
+							<% if (acadyear == s.acadyear) { %>
+								<option selected value="<%= s.acadyear %>"><%= s.acadyear %></option>
+							<% }  else { %>
+								<option value="<%= s.acadyear %>"><%= s.acadyear %></option>
+							<% } %>
+						<% }); %>
+					</select>
+				</label>
+			</div>
+		</form>
+	</h2>
+	<div class="scrollable">
+  	<table class="rwd-table">
+		<tr>
+	  		<th>Наименование</th>
+	  		<th>Руководитель</th>
+			<th>Обьем, руб.</th>
+			<% if (!acadyear) { %><th>Учебный год</th><% } %>
+		</tr>
+		<% research.forEach(function(r){ %>
+		<tr data-href="/research/edit/<%= r.id %>">
+	  		<td data-th="Movie Title"><%= r.title %></td>
+	  		<td data-th="Genre"><%= r.responsible %></td>
+			<td data-th="Year"><%= r.amount %></td>
+			<% if (!acadyear) { %><td data-th="Year"><%= r.acadyear %></td><% } %>
+		</tr>
+		<% }); %>
+	</table>
+	</div>
+</div>
+<%- include ../partials/footer.ejs %>

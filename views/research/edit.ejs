@@ -1,0 +1,41 @@
+<%- include ../partials/header.ejs %>
+
+<form id="cal" method="POST">
+ 	<header class="row">
+		<img class="logo" src="/assets/img/100x.png" height="95">
+        <p style="margin-left:12px; font-size:16px; line-height: 25px">Омский<br> Государственный<br> Технический Университет</p>
+    </header>
+    <h2>Редактировать</h2>
+    <div class="row">
+        <div class="col">
+            <div class="group">
+                <label>Руководитель:</label>
+                <input type="text" name="responsible" value="<%= research.responsible%>"/>
+            </div>
+            <div class="group">
+                <label>Обьем, рублей:</label>
+                <input type="number" name="amount" value="<%= research.amount %>"/>
+            </div>
+            <div class="group">
+                <label>Учебный год:</label>
+                <input type="text" name="acadyear" value="<%= research.acadyear %>"/>
+            </div>
+        </div>
+        <div class="col">
+            <div class="group">
+                <label>Наименование работы:</label>
+                <textarea class="input-textarea" name="title"><%= research.title %></textarea>
+            </div>
+            <div class="groupbtn">
+                <button type="submit" class="btn" formaction="/research/edit">Сохранить</button>
+                <button type="submit" class="btn danger" formaction="/research/delete">Удалить</button>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" name="id" value="<%= research.id %>" />
+    <footer class="row">
+        <%= message %>
+    </footer>
+</form>
+
+<%- include ../partials/footer.ejs %>

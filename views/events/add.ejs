@@ -1,0 +1,60 @@
+<%- include ../partials/header.ejs %>
+
+<form id="cal" action="/events/add" method="post">
+ 	<header class="row">
+		<img class="logo" src="/assets/img/100x.png" height="95">
+		<p style="margin-left:12px; font-size:16px; line-height: 25px">Омский<br> Государственный<br> Технический Университет</p>
+    </header>
+    <h2>Создать</h2>
+    <div class="row">
+        <div class="col">
+            <div class="group">
+                <label>Название мероприятия:</label>
+                <input type="text" name="title"/>
+            </div>
+            <div class="group">
+                <label>Ссылка:</label>
+                <input type="text" name="link"/>
+            </div>
+            <div class="group">
+                <label>Основание:</label>
+                <input type="text" name="footing"/>
+            </div>
+            <div class="group">
+                <label>Место проведения:</label>
+                <input type="text" name="place"/>
+            </div>
+        </div>
+        <div class="col">
+            <div class="group">
+                <label>Статус:</label>
+                <div class="select">
+                    <label>
+                        <select name="status">
+                            <% status.forEach(function(s){ %>
+                                <option value="<%= s.id %>"><%= s.name %></option>
+                            <% }); %>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div class="group">
+                <label>Ответственный за проведение:</label>
+                <input type="text" name="responsible"/>
+            </div>
+            <div class="group">
+                <label>Количество участников:</label>
+                <input type="number" name="participants"/>
+            </div>
+            <div class="group">
+                <button  class="btn" type="submit">Добавить</button>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" name="date" value="<%= date %>" />
+    <footer class="row">
+        <%= message %>
+    </footer>
+</form>
+
+<%- include ../partials/footer.ejs %>

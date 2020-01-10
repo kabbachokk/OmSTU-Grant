@@ -1,0 +1,16 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".dropdown").click(function() {
+			$(this).toggleClass('show');
+		});
+		$('tr[data-href]').on("click", function() {
+    		document.location = $(this).data('href');
+		});
+		$('.logo').on("click", function() {
+    		document.location = '/';
+		});
+	});
+</script>
+</body>
+</html>
